@@ -1,0 +1,11 @@
+def count_word(fn):
+    import os.path
+    if os.path.isfile(fn):
+        with open(fn, 'r') as file:
+            text = file.read()
+            char_list = [',', '.', '!', '?', '\n', '\t', '\"', '\'']
+            for each_char in char_list:
+                text = text.replace(each_char, ' ')
+            words = text.split()
+            words_num = len(words)
+    return words_num
